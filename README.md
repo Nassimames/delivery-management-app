@@ -4,6 +4,14 @@ Wayline is a delivery operations dashboard for managing products, delivery zones
 
 The application uses real Supabase data. Dashboard metrics and lists are not seeded with demo statistics...
 
+## Live Demo
+
+**Try Wayline:** https://delivery-management-app-nine.vercel.app/
+
+Wayline is a full-stack delivery operations application built with Next.js and Supabase. Sign up to access the workspace and explore product management, delivery zone configuration, interactive maps, and geographically validated order creation.
+
+A Supabase account is required to access the workspace.
+
 ## Features
 
 - **Operations dashboard** — live product, zone, order, and pending-order counts; recent orders; order totals by zone; and a map preview of configured delivery areas.
