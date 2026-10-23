@@ -1,26 +1,108 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #f4f5f1;
+  --foreground: #1b2826;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-canvas: #f4f5f1;
+  --color-ink: #1b2826;
+  --color-muted: #6c7772;
+  --color-border: #e1e6df;
+  --color-brand: #286457;
+  --color-brand-hover: #1d5046;
+  --color-danger: #a54245;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(26 49 42 / 4%), 0 5px 18px rgb(26 49 42 / 2%);
+  --shadow-panel: 0 14px 38px rgb(26 49 42 / 12%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #c7e2aa;
+  color: #183630;
+}
+
+.hero-grain {
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.2'/%3E%3C/svg%3E");
+  mask-image: linear-gradient(115deg, #000 0%, transparent 80%);
+}
+
+.dashboard-hero {
+  background-image: linear-gradient(110deg, #173632 0%, #173632 50%, #214c40 100%);
+}
+
+.hero-orbit::after,
+.hero-orbit::before {
+  position: absolute;
+  inset: 1.4rem;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: 9999px;
+  content: "";
+}
+
+.hero-orbit::after {
+  inset: 3.8rem;
+}
+
+.auth-orbit::after,
+.auth-orbit::before {
+  position: absolute;
+  inset: 2rem;
+  border: 1px solid rgb(255 255 255 / 7%);
+  border-radius: 9999px;
+  content: "";
+}
+
+.auth-orbit::after {
+  inset: 5rem;
+}
+
+.zone-map-marker {
+  border: 0;
+  background: transparent;
+}
+
+.zone-map-marker__dot {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 2px;
+  border: 3px solid #fff;
+  border-radius: 9999px;
+  background: #286457;
+  box-shadow: 0 1px 5px rgb(23 32 51 / 35%);
+}
+
+.leaflet-container {
+  z-index: 0;
+  background: #edf0ea;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.leaflet-control-attribution {
+  font-size: 9px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
