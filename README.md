@@ -2,7 +2,7 @@
 
 Wayline is a delivery operations dashboard for managing products, delivery zones, and customer orders in one workspace. It is built for logistics operations rather than marketplace storefronts: staff can assign products to service areas, check whether a delivery location is covered, and track orders against available stock.
 
-The application uses real Supabase data. Dashboard metrics and lists are not seeded with demo statistics.
+The application uses real Supabase data. Dashboard metrics and lists are not seeded with demo statistics...
 
 ## Features
 
